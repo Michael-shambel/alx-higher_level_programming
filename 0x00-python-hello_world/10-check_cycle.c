@@ -8,14 +8,15 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *slow = list;
-	listint_t *fast = list;
+	listint_t *makeshift = list;
 
-	while (slow && fast && fast->next)
+	while (makeshift != NULL && makeshift->next != NULL)
 	{
-		slow = slow->next;
-		fast = fast->next->next;
-		if (slow == fast)
+		list = list->next;
+
+		makeshift = makeshift->next->next;
+
+		if (list == makeshift)
 			return (1);
 	}
 	return (0);
