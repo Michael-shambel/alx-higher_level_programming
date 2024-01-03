@@ -1,4 +1,3 @@
-#this text file define an integer addition function and return the sum of two integer:
 >>> add_integer = __import__('0-add_integer').add_integer
 
 # test 1: adding two integers:
