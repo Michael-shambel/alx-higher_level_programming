@@ -50,4 +50,8 @@ class Rectangle:
         return str_rec
 
     def __repr__(self):
-        return "<{}.{} object at {}>".format(type(self).__module__, type(self).__name__, hex(id(self)))
+        return "<{}.{} object at {}>".format(
+                type(self).__module__,
+                type(self).__name__,
+                hex(id(self))
+                )
