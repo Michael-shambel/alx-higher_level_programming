@@ -45,13 +45,10 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         str_rec = ""
-        for _ in range(self.__height):
-            str_rec += '#' * self.__width + '\n'
+        for i in range(self.__height):
+            for j in range(self.__width):
+                str_rec += '#'
+            if i != self.__height - 1:
+                str_rec += '\n'
+    
         return str_rec
-
-    def __repr__(self):
-        return "<{}.{} object at {}>".format(
-                type(self).__module__,
-                type(self).__name__,
-                hex(id(self))
-                )
