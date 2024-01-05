@@ -49,5 +49,5 @@ class Rectangle:
             for j in range(self.__width):
                 str_rec += '#'
             if i != self.__height - 1:
-                str_rec += '\n' 
+                str_rec += '\n'
         return str_rec
