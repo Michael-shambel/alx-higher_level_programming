@@ -1,0 +1,25 @@
+this module will test the division of each element of a matrix in different matrix approaches
+
+
+::
+
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+	>>> matrix = [
+	...	[5, 10, 15],
+	...	[20, 25, 30]
+	...	]
+	>>> print(matrix_divided(matrix, 5))
+	[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+
+::
+
+
+	>>> matrix = [
+    	...	[1.5, 2.7, 3.4],
+    	...	[4.2, 5.1, 6.9],
+    	...	[7.8, 8.6, 9.3]
+	...	]
+	>>> print(matrix_divided(matrix, 2))
+	[[0.75, 1.35, 1.7], [2.1, 2.55, 3.45], [3.9, 4.3, 4.65]]

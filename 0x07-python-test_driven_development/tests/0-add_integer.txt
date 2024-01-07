@@ -1,31 +1,68 @@
->>> add_integer = __import__('0-add_integer').add_integer
+this module define the addition of two intgers with differnt data types.
+the function takes two argument which is either integer or float
+if the argument is float it will cast to integer
 
-# test 1: adding two integers:
->>> add_integer(1, 2)
-3
+::
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(1, 2)
+	3
 
-# test 2: adding two integer and one is negative:
->>> add_integer(100, -2)
-98
+::
+	>>> add_integer(100, -2)
+	98
 
-# test 3: passing only one integer:
->>> add_integer(2)
-100
+::
 
-# test 4: passing one float and negative integer:
->>> add_integer(100.3, -2)
-98
 
-# test 5: passing two float:
->>> add_integer(3.5, 2.5)
-5
+when you pass any foalt it will cast to integer
+	>>> add_integer(3.5, 2.5)
+	5
 
-# test 6: passing integer and string:
->>> add_integer(4, "School")
-Traceback (most recent call last):
-TypeError: b must be an integer
 
-# test 7: passing None:
->>> add_integer(None)
-Traceback (most recent call last):
-TypeError: a must be an integer
+::
+
+	>>> add_integer(-5.9, -1.8)
+	-6
+
+::
+
+	
+	>>> add_integer(2)
+	100
+
+
+::
+
+	>>> add_integer("test", 7)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+::
+
+	>>> add_integer(4, "test")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+::
+	
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+::
+
+	>>> add_integer("test", "driven")
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+::
+
+	>>> add_integer(float('inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+::
+
+	>>> add_integer(2, float('inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer

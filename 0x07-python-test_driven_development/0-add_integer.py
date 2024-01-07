@@ -5,6 +5,8 @@
 def add_integer(a, b=98):
     """
     Addition of two integers with the value of integer or float.
+    the function take two arguments 
+    those argument should be either float or integer
 
     :param a: First parameter
     :type a: int or float

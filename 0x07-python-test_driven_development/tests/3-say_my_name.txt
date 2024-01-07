@@ -1,0 +1,33 @@
+this module is used to check the return string
+we are going to provide differnt approach and we test the output
+
+
+::
+
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name("Michael", "Tefera")
+	My name is Michael Tefera
+
+
+::
+
+
+	>>> say_my_name("Michael")
+	My name is Michael
+
+
+::
+
+
+	>>> say_my_name(6, "Michael")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+
+::
+
+
+	>>> say_my_name("Michael", 11)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
