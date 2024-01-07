@@ -1,0 +1,20 @@
+this module used to check the text indentation by checking punctuation
+
+
+::
+
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+	>>> text_indentation("Indent?")
+	Indent?
+	<BLANKLINE>
+
+
+::
+
+
+	>>> text_indentation("Indent. the text.")
+	Indent.
+	<BLANKLINE>
+	the text.
+	<BLANKLINE>
