@@ -1,0 +1,27 @@
+this module going to test different approch on printing a sign # 
+the function going to print hashtag sign based on the square of the given argument
+the function take the argument called size and print the sign
+
+
+::
+
+
+	>>> print_square = __import__('4-print_square').print_square
+	>>> print_square(1)
+	#
+
+
+::
+
+
+	>>> print_square(2)
+	##
+	##
+
+
+::
+
+
+	>>> print_square(-7)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
