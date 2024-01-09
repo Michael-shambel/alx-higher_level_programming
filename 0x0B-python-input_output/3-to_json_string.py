@@ -4,6 +4,7 @@ representation of an object (string)
 """
 import json
 
+
 def to_json_string(my_obj):
     """
     this function return the JSON representation
