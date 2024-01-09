@@ -12,6 +12,4 @@ def to_json_string(my_obj):
     return:
     str: json representation of string
     """
-    if isinstance (my_obj, set):
-        my_obj = list(my_obj)
     return json.dumps(my_obj)
