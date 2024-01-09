@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""unction that writes a string to a text file and returns the number of characters written"""
+"""unction that writes ai string to a text
+file and returns the number of characters written"""
 
 
 def write_file(filename="", text=""):
