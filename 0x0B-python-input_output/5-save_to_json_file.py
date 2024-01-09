@@ -15,5 +15,5 @@ def save_to_json_file(my_obj, filename):
     afile"""
     if isinstance(my_obj, list):
         my_obj = list(my_obj)
-    with open(filename, 'w') as f:
+    with open(filename, "w") as f:
         json.dump(my_obj, f)
