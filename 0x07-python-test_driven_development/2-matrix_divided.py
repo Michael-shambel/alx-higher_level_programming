@@ -10,6 +10,10 @@ def matrix_divided(matrix, div):
     TypeError: div must be number
     ZeroDivisionError: div must be different from 0
     """
+
+    if not isinstance(div, (int, float)):
+        raise TypeError("div must be a number")
+
     for row in matrix:
         if not all(isinstance(row, list) for row in matrix):
             raise TypeError(
@@ -30,7 +34,7 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
 
     if div == 0:
-        raise ZeroDivisionError("divisionby zero")
+        raise ZeroDivisionError("division by zero")
 
     new_matrix = []
     for row in matrix:
