@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""this function going to check every text if any specified function showed it will print the line"""
+"""this function going to check
+every text if any specified function
+showed it will print the line"""
 
 
 def text_indentation(text):
@@ -8,7 +10,7 @@ def text_indentation(text):
     args:
     text: input text
     """
-    
+
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 

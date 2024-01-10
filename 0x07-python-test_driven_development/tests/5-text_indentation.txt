@@ -18,3 +18,11 @@ this module used to check the text indentation by checking punctuation
 	<BLANKLINE>
 	the text.
 	<BLANKLINE>
+
+
+::
+
+
+	>>> text_indentation(1)
+	Traceback (most recent call last):
+	TypeError: text must be a string
