@@ -25,5 +25,5 @@ def text_indentation(text):
     if l_count:
         lines.append(l_count.strip())
 
-    for l_count in lines:
-        print(l_count, end='')
+    for i, line in enumerate(lines):
+        print(line, end=' ' if i < len(lines) - 1 else '')
