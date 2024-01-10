@@ -25,3 +25,11 @@ the function take the argument called size and print the sign
 	>>> print_square(-7)
 	Traceback (most recent call last):
 	ValueError: size must be >= 0
+
+
+::
+
+
+	>>> print_square("int")
+	Traceback (most recent call last):
+	TypeError: size must be an integer

@@ -3,8 +3,8 @@
 
 
 def print_square(size):
-    """ 
-    this function take a size of an integer 
+    """
+    this function take a size of an integer
     the function have one argument called size
     it take tehe argument and print sign of # hashtag
     """
