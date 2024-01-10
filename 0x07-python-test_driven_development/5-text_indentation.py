@@ -3,19 +3,24 @@
 
 
 def text_indentation(text):
+    """
+    this will print text after signes specification
+    args:
+    text: input text
+    """
     
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
     sign = ['.', '?', ':']
     lines = []
-    l_count = ''
+    l_count = ' '
 
     for char in text:
         l_count += char
         if char in sign:
             lines.append(l_count.strip())
-            l_count = ''
+            l_count = ' '
 
     if l_count:
         lines.append(l_count.strip())
