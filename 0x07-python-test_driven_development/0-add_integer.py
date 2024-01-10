@@ -5,7 +5,7 @@
 def add_integer(a, b=98):
     """
     Addition of two integers with the value of integer or float.
-    the function take two arguments 
+    the function take two arguments
     those argument should be either float or integer
 
     :param a: First parameter
@@ -20,6 +20,5 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not isinstance(b, int) and not isinstance(b, float):
         raise TypeError("b must be an integer")
-
 
     return (int(a) + int(b))
