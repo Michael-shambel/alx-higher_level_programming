@@ -21,6 +21,6 @@ class Student:
     def to_json(self, attrs=None):
         """get the dictionary for the student"""
 
-        if isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
-            return {attr: getattr(self, attr) for attr in attrs}
-        return self.__dict__
+        if attrs is None:
+            return self.__dict__
+        return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
