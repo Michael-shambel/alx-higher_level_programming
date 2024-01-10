@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-""" function that return dictionary with simple data structure"""
+
+""" function that returns a dictionary with a simple data structure"""
+
 
 def class_to_json(obj):
-    """return a dictionary og an object"""
+    """return a dictionary of an object"""
     return obj.__dict__
