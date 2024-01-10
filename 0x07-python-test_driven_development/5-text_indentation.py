@@ -14,17 +14,16 @@ def text_indentation(text):
 
     sign = ['.', '?', ':']
     lines = []
-    l_count = ' '
+    l_count = ''
 
     for char in text:
         l_count += char
         if char in sign:
             lines.append(l_count.strip())
-            l_count = ' '
+            l_count = ''
 
     if l_count:
         lines.append(l_count.strip())
 
     for l_count in lines:
-        print(l_count)
-        print()
+        print(l_count, end='')
