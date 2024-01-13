@@ -73,5 +73,5 @@ this module will test the division of each element of a matrix in different matr
 	...     [1, 2, 3],
 	...     [4, 5, 6]
 	... ]
-	>>> print(matrix_divided(matrix, float(inf))
-	[[0, 0, 0], [0, 0, 0]]
+	>>> print(matrix_divided(matrix, float('inf')))
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
