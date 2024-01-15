@@ -7,11 +7,16 @@ class Rectangle(Base):
     """this is rectangle class with inheritance of Base"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """this is constractor method"""
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        """this is constractor method
+        args:
+            width: width of the rectangle
+            height: height of the rectangle
+            x: x cordinate of the rectangle
+            y: y coredinate of the rectangle"""
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -72,33 +77,54 @@ class Rectangle(Base):
 
     def area(self):
         """calculate the erea of rectangle"""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """display hashtag sigh"""
-        for _ in range(self.__y):
+        for _ in range(self.y):
             print()
-        for _ in range(self.__height):
-            print(" " * self.__x + "#" * self.__width)
+        for _ in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """print the string format"""
         return (
-            f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
-            f"{self.__width}/{self.height}"
+            f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
+            f"{self.width}/{self.height}"
             )
 
     def update(self, *args, **kwargs):
-        """this is method for assign argument"""
+        """this is method for assign argument
+
+        args:
+            - id attribute
+            - widrh attribute
+            - height attribute
+            - x cordinate attribute
+            - y coordinate attribute"""
         attributes = ["id", "width", "height", "x", "y"]
 
         if args:
-            for i in range(len(args)):
-                setattr(self, attributes[i], args[i])
+            for i, value in enumerate(args):
+                if value is None:
+                    initial_values = [
+                            initial_value_for_id,
+                            initial_value_for_width,
+                            initial_value_for_height,
+                            initial_value_for_x,
+                            initial_value_for_y
+                            ]
+                    setattr(self, attributes[i], initial_values[i])
+                else:
+                    setattr(self, attributes[i], value)
         elif kwargs:
             for key, value in kwargs.items():
                 if key in attributes:
-                    setattr(self, key, value)
+                    if value is None:
+                        initial_value = initial_value_for_key
+                        setattr(self, key, initial_value)
+                    else:
+                        setattr(self, key, value)
 
     def to_dictionary(self):
         """return dictionary representation of a rectangle"""
@@ -109,4 +135,3 @@ class Rectangle(Base):
                 "x": self.x,
                 "y": self.y
                 }
-
