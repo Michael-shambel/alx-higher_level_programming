@@ -3,6 +3,7 @@
 import json
 
 
+
 class Base:
     """ this class will clreae a private attribute"""
 
@@ -68,3 +69,35 @@ class Base:
                 return file_instances
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Write the CSV representation of list_objs to a file."""
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w") as f:
+            if list_objs is not None:
+                for obj in list_objs:
+                    if cls.__name__ == "Rectangle":
+                        f.write(f"{obj.id},{obj.width},{obj.height},{obj.x},{obj.y}\n")
+                    elif cls.__name__ == "Square":
+                        f.write(f"{obj.id},{obj.size},{obj.x},{obj.y}\n")
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Return a list of instances loaded from a CSV file."""
+        filename = cls.__name__ + ".csv"
+        instances = []
+        try:
+            with open(filename, "r") as f:
+                for line in f:
+                    values = line.strip().split(',')
+                    if cls.__name__ == "Rectangle":
+                        from models.rectangle import Rectangle
+                        instance = Rectangle(int(values[0]), int(values[1]), int(values[2]), int(values[3]), int(values[4]))
+                    elif cls.__name__ == "Square":
+                        from models.square import Square
+                        instance = Square(int(values[0]), int(values[1]), int(values[2]), int(values[3]))
+                    instances.append(instance)
+        except FileNotFoundError:
+            pass
+        return instances

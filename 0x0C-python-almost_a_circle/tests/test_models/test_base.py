@@ -3,8 +3,10 @@
 import os
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 
-class Test_Base(unittest.TestCase):
+class Test_Base_init(unittest.TestCase):
     """unittest for base classes:
     this going to test creating base 
     save the string and test jsom string"""
@@ -18,3 +20,6 @@ class Test_Base(unittest.TestCase):
         instance2 = Base()
         self.assertEqual(instance1.id, 1)
         self.assertEqual(instance2.id, 2)
+
+if __name__ == '__main__':
+    unittest.main()
