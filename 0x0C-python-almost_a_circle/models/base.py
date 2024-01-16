@@ -3,7 +3,6 @@
 import json
 
 
-
 class Base:
     """ this class will clreae a private attribute"""
 
