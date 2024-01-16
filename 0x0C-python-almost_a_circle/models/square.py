@@ -10,7 +10,10 @@ class Square(Rectangle):
         """this is the constranctor of a square inherited from
         Rectangle class and it is going to take the attributes
         of rectangle"""
-        super().__init__(size, size, x, y, id)
+        if id is None:
+            super().__init__(size, size, x, y)
+        else:
+            super().__init__(size, size, x, y)
 
     def __str__(self):
         """this print the attributes"""

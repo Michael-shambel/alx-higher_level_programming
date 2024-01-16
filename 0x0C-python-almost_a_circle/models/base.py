@@ -85,19 +85,21 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """Return a list of instances loaded from a CSV file."""
+        from models.rectangle import Rectangle
+        from models.square import Square
+
         filename = cls.__name__ + ".csv"
-        instances = []
         try:
             with open(filename, "r") as f:
+                instances = []
                 for line in f:
                     values = line.strip().split(',')
                     if cls.__name__ == "Rectangle":
-                        from models.rectangle import Rectangle
-                        instance = Rectangle(int(values[0]), int(values[1]), int(values[2]), int(values[3]), int(values[4]))
+                        insta = Rectangle(int(values[0]), int(values[1]), int(values[2]), int(values[3]), int(values[4]))
                     elif cls.__name__ == "Square":
-                        from models.square import Square
-                        instance = Square(int(values[0]), int(values[1]), int(values[2]), int(values[3]))
-                    instances.append(instance)
+                        insta = Square(int(values[0]), int(values[1]), int(values[2]))
+                    instances.append(insta)
+                return instances
         except FileNotFoundError:
-            pass
-        return instances
+            return []
+
