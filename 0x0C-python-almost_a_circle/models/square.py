@@ -13,7 +13,7 @@ class Square(Rectangle):
         if id is None:
             super().__init__(size, size, x, y)
         else:
-            super().__init__(size, size, x, y)
+            super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """this print the attributes"""

@@ -69,37 +69,3 @@ class Base:
                 return file_instances
         except FileNotFoundError:
             return []
-
-    @classmethod
-    def save_to_file_csv(cls, list_objs):
-        """Write the CSV representation of list_objs to a file."""
-        filename = cls.__name__ + ".csv"
-        with open(filename, "w") as f:
-            if list_objs is not None:
-                for obj in list_objs:
-                    if cls.__name__ == "Rectangle":
-                        f.write(f"{obj.id},{obj.width},{obj.height},{obj.x},{obj.y}\n")
-                    elif cls.__name__ == "Square":
-                        f.write(f"{obj.id},{obj.size},{obj.x},{obj.y}\n")
-
-    @classmethod
-    def load_from_file_csv(cls):
-        """Return a list of instances loaded from a CSV file."""
-        from models.rectangle import Rectangle
-        from models.square import Square
-
-        filename = cls.__name__ + ".csv"
-        try:
-            with open(filename, "r") as f:
-                instances = []
-                for line in f:
-                    values = line.strip().split(',')
-                    if cls.__name__ == "Rectangle":
-                        insta = Rectangle(int(values[0]), int(values[1]), int(values[2]), int(values[3]), int(values[4]))
-                    elif cls.__name__ == "Square":
-                        insta = Square(int(values[0]), int(values[1]), int(values[2]))
-                    instances.append(insta)
-                return instances
-        except FileNotFoundError:
-            return []
-
