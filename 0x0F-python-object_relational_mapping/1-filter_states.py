@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" list a value naemstart with n """
 import MySQLdb
 import sys
 
