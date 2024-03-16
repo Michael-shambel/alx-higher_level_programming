@@ -7,7 +7,6 @@ if __name__ == "__main__":
     mysql_user = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
-    state_name = sys.argv[4]
     
     db = MySQLdb.connect(
             host="localhost",
@@ -17,6 +16,7 @@ if __name__ == "__main__":
             db=database_name
             )
     cursor = db.cursor()
+    state_name = sys.argv[4]
     cursor.execute("SELECT * FROM states WHERE name LIKE %s", (state_name,))
     values = cursor.fetchall()
     for value in values:
