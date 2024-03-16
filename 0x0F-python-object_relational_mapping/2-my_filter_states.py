@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" list all element in the argument given """
 import MySQLdb
 import sys
 
