@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" list all value in the database """
 import MySQLdb
 import sys
 
