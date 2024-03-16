@@ -17,8 +17,8 @@ if __name__ == "__main__":
             db=database_name
             )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE %s", (state_name, ))
-    values= cursor.fetchall()
+    cursor.execute("SELECT * FROM states WHERE name LIKE %s", (state_name,))
+    values = cursor.fetchall()
     for value in values:
         print(value)
     cursor.close()
