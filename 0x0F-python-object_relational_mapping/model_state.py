@@ -3,6 +3,8 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
+
+
 class State(Base):
     """ state class linked to the state table in the database """
     __tablename__ = 'states'
