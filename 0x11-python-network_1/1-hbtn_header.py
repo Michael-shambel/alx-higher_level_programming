@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Python script that takes in a URL, sends a request to the URL"""
+"""Python script that takes in a URL, sends a request to the URL
+
+Usage: ./1-hbtn_header.py <URL>
+"""
 import urllib.request
 import sys
 
