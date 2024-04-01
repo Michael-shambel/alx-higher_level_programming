@@ -14,3 +14,5 @@ if __name__ == "__main__":
         data = resp.json()
         if 'id' in data:
             print(data['id'])
+        else:
+            print(None)
