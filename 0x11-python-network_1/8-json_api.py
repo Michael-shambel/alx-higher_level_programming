@@ -5,9 +5,9 @@ import sys
 import requests
 
 if __name__ == "__main__":
-    letter = sys.argv[1]
+    letter = sys.argv[1] if len(sys.argv) > 1 else ""
     url = 'http://0.0.0.0:5000/search_user'
-    value = {"q": letter} if len(sys.argv) == 1 else {"q": ""}
+    value = {"q": letter}
 
     req = requests.post(url, data=value)
     try:
