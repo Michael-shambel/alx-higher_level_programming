@@ -10,9 +10,8 @@ if __name__ == "__main__":
     url = 'https://api.github.com/user'
 
     resp = requests.get(url, auth=(username, password))
-    if resp:
-        data = resp.json()
-        if 'id' in data:
-            print(data['id'])
-        else:
-            print(None)
+    data = resp.json()
+    if 'id' in data:
+        print(data['id'])
+    else:
+        print(None)
