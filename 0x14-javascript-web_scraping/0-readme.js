@@ -15,3 +15,4 @@ fs.readFile(filePath, 'utf-8', (err, data) => {
     //console log the content parameter
     console.log(data);
 });
+
