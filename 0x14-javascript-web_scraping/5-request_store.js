@@ -20,8 +20,7 @@ request(url, (error, response, body) => {
   fs.writeFile(filePath, body, 'utf-8', err => {
     if (err) {
       console.error(err);
-      return;
     }
-    console.log(`The content has been saved to ${filePath}`);
+    // console.log(`The content has been saved to ${filePath}`);
   });
 });
