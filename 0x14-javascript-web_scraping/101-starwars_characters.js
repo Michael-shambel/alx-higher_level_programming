@@ -24,11 +24,11 @@ request(apiUrl, (error, response, body) => {
     return new Promise((resolve, reject) => {
       request(url, (charError, charResponse, charBody) => {
         if (charError) {
-          reject(charError);
+          reject(new Error(charError));
           return;
         }
         if (charResponse.statusCode !== 200) {
-          reject(`Error: ${charResponse.statusCode}`);
+          reject(new Error(`Error: ${charResponse.statusCode}`));
           return;
         }
         const character = JSON.parse(charBody);
@@ -43,7 +43,6 @@ request(apiUrl, (error, response, body) => {
       names.forEach(name => console.log(name));
     })
     .catch(err => {
-      console.error("Error fetching characters:", err);
+      console.error('Error fetching characters:', err);
     });
 });
-
