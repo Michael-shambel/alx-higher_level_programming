@@ -17,8 +17,8 @@ request(apiUrl, (error, response, body) => {
   }
 
   const films = JSON.parse(body).results;
-  const count = films.filter(film => film.characters.includes(`/${characterId}/`)).length;
-  //const count = films.filter(film => film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)).length;
+  //const count = films.filter(film => film.characters.includes(`/${characterId}/`)).length;
+  const count = films.filter(film => film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)).length;
 
   console.log(count);
 });
