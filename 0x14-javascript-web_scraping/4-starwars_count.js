@@ -1,9 +1,7 @@
-#!/usr/bin/node
-
 const request = require('request');
 
 const apiUrl = process.argv[2];
-const characterId = '18'; // ID of Wedge Antilles
+const characterUrl = 'https://swapi-api.alx-tools.com/api/people/18/';
 
 request(apiUrl, (error, response, body) => {
   if (error) {
@@ -17,8 +15,11 @@ request(apiUrl, (error, response, body) => {
   }
 
   const films = JSON.parse(body).results;
-  // const count = films.filter(film => film.characters.includes(`/${characterId}/`)).length;
-  const count = films.filter(film => film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)).length;
+
+  // Count occurrences of character with ID 18 in films array
+  const count = films.reduce((count, film) => {
+    return film.characters.includes(characterUrl) ? count + 1 : count;
+  }, 0);
 
   console.log(count);
 });
