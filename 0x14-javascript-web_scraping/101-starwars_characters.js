@@ -19,18 +19,31 @@ request(apiUrl, (error, response, body) => {
   const movie = JSON.parse(body);
   const charactersUrls = movie.characters;
 
-  charactersUrls.forEach(characterUrl => {
-    request(characterUrl, (charError, charResponse, charBody) => {
-      if (charError) {
-        console.error(charError);
-        return;
-      }
-      if (charResponse.statusCode !== 200) {
-        console.error(`Error: ${charResponse.statusCode}`);
-        return;
-      }
-      const character = JSON.parse(charBody);
-      console.log(character.name);
+  // Function to fetch character details
+  const fetchCharacter = (url) => {
+    return new Promise((resolve, reject) => {
+      request(url, (charError, charResponse, charBody) => {
+        if (charError) {
+          reject(charError);
+          return;
+        }
+        if (charResponse.statusCode !== 200) {
+          reject(`Error: ${charResponse.statusCode}`);
+          return;
+        }
+        const character = JSON.parse(charBody);
+        resolve(character.name);
+      });
     });
-  });
+  };
+
+  // Fetch and print character names
+  Promise.all(charactersUrls.map(fetchCharacter))
+    .then(names => {
+      names.forEach(name => console.log(name));
+    })
+    .catch(err => {
+      console.error("Error fetching characters:", err);
+    });
 });
+
